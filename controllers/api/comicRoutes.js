@@ -6,7 +6,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newComic = await Comic.create({
       ...req.body,
-      user_id: req.session.user_id,
+      comic_id: req.session.comic_id,
     });
 
     res.status(200).json(newComic);
@@ -20,14 +20,14 @@ router.delete('/:id', withAuth, async (req, res) => {
     const ComicData = await Comic.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        comic_id: req.session.comic_id,
       },
     });
 
-    if (!ComicData) {
-      res.status(404).json({ message: 'No comic found!' });
-      return;
-    }
+    // if (!ComicData) {
+    //   res.status(404).json({ message: 'No comic found!' });
+    //   return;
+    // }
 
     res.status(200).json(ComicData);
   } catch (err) {
