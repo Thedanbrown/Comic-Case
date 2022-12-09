@@ -36,10 +36,20 @@ body {
     border-bottom: 2px solid var(--green);
 }
 
+.footer {
+    border-top: 2px solid var(--green);
+}
+
 .navbar-text {
     font-size: 3rem;
     color: var(--green);
 }
+
+.footer-text {
+    font-size: 1rem;
+    color: var(--green)
+}
+
 .parent-box {
     display: flex;
     justify-content: center;
