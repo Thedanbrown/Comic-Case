@@ -21,14 +21,6 @@ body {
     background-size: contain;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    padding: 5%;
-}
-
 .navbar {
     display: flex;
     align-items: center;
@@ -48,12 +40,6 @@ body {
 .footer-text {
     font-size: 1rem;
     color: var(--green)
-}
-
-.parent-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .login-box, .signUp-box {
@@ -328,3 +314,4 @@ body {
         bottom: 100%;
     }
 }
+
