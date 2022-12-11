@@ -5,12 +5,14 @@ API_KEY= 'e94ef6cf167986239c7e6513b1ae2294e3bcdf22'
 
 
 const triggerSearch = function (event) {
-    const search = issueSearch.value;
-    console.log(search)
+    const name = nameSearch.value;
+    console.log(name)
 
+    const issue = issueSearch.value;
+    console.log(issue)
     event.preventDefault();
 
-    fetch(`https://comicvine.gamespot.com/api/issues/?api_key=${API_KEY}&format=json&field_list=cover_date,deck,description,id,image,issue_number,name,volume&filter=name:${search}`)
+    fetch(`https://comicvine.gamespot.com/api/issues/?api_key=${API_KEY}&format=json&field_list=cover_date,deck,description,id,image,issue_number,name,volume&filter=name:${name},issue_number:${issue}`)
 
 }
 
@@ -22,14 +24,14 @@ const createComicData = function (event) {
 
     const name = document.getElementById('name').value;
     const issuenum = document.getElementById('issuenum').value;
-    const volume = document.getElementById('volume').value;
-    const comicvineid = document.getElementById('comicvineid').value;
+    // const volume = document.getElementById('volume').value;
+    // const comicvineid = document.getElementById('comicvineid').value;
     const pubdat = document.getElementById('coverdate').value;
     const publisher = document.getElementById('publisher').value;
     const condition = document.getElementById('condition').value;
     const image = document.getElementById('imagelink').value;
     const deck = document.getElementById('deck').value;
-    const description = document.getElementById('description').value;
+    // const description = document.getElementById('description').value;
 
 // add in additional data elements
     
@@ -38,14 +40,14 @@ const createComicData = function (event) {
         body: JSON.stringify({
             title: name,
             issue: issuenum,
-            volume: volume,
-            comicvine_id: comicvineid,
+            // volume: volume,
+            // comicvine_id: comicvineid,
             published_date: pubdat,
             publisher: publisher,
             condition: condition,
             image: image,
             deck: deck,
-            description: description
+            // description: description
  
         })
     })
