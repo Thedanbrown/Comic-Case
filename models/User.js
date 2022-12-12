@@ -1,6 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
+const dayjs = require('dayjs');
 const sequelize = require('../config/connection');
+
 
 class User extends Model {
     checkPassword(loginPassword) {
@@ -32,14 +34,17 @@ User.init(
 
     },
 
-    dateofbirth: {
-        type: DataTypes.DATEONLY,
-        allowNull: false,
-    },
+    // dateofbirth: {
+    //     type: DataTypes.DATEONLY,
+    //     allowNull: false,
+    // },
 
     acctcreatedate: {
         type: DataTypes.DATEONLY,
         allowNull: false,
+        get: function() {
+            return dayjs.utc(this.getDataValue('acctcreatedate')).format('YYYY-MM-DD');
+        }
     },
     password: {
         type: DataTypes.STRING,
