@@ -9,6 +9,10 @@ html {
     height: 100%;
 }
 
+ul li {
+    margin: 0 0 0 5px;
+}
+
 body {
     margin:0;
     padding:0;
@@ -17,7 +21,7 @@ body {
     background: linear-gradient(
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
-    ), url("../img/sinister-war-1.webp");
+    ), url("../img/comicbooks.jpg");
     background-repeat: repeat;
     background-size: contain;
     
@@ -27,15 +31,10 @@ body {
     border-bottom: 2px solid var(--green);
 }
 
-.navbar h2 {
-    margin-left: 12rem;
-    margin-right: 1rem;
-    color: var(--green);
-}
-.sidebar {
+.feed-sidebar {
     border-right: 2px solid var(--green);
     color: var(--green);
-    margin: 0;
+    margin: 0px 0 0 0;
     padding: 0;
     width: 150px;
     position: fixed;
@@ -47,11 +46,10 @@ body {
     max-width: 397px;
     max-height: 431px;
 }
-.content {
-    margin: 10px;
+.feed-content {
+    margin: 84px 10px 10px 10px;
     margin-left: 150px;
     padding: 1px 16px;
-    /* height: 1000px; */
     display: grid;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
@@ -67,7 +65,7 @@ body {
     color: var(--green);
 }
 
-.card {
+.feed-card {
     background: rgba(0,0,0,.7);
     border: 2px solid var(--green);
     box-shadow: 0 10px 10px var(--red);
@@ -85,11 +83,13 @@ body {
 
   /* On screens that are less than 727px wide, make the sidebar into a topbar */
 @media screen and (max-width: 727px) {
-    .sidebar {
+    .feed-sidebar {
+        margin: 84px 0 0 0;
         width: 100%;
         height: auto;
         position: relative;
     }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
+    .feed-sidebar a {float: left;}
+    div.feed-content {margin-left: 0;}
+
 }

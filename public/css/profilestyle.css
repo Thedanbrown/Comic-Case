@@ -17,7 +17,7 @@ body {
     background: linear-gradient(
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
-    ), url("../img/comicbooks4.jpg");
+    ), url("../img/comicbooks.jpg");
     background-repeat: repeat;
     background-size: contain;
     
@@ -27,10 +27,10 @@ body {
     border-bottom: 2px solid var(--green);
 }
 
-.sidebar {
+.profile-sidebar {
     border-right: 2px solid var(--green);
     color: var(--green);
-    margin: 0;
+    margin: 0px 0 0 0;
     padding: 0;
     width: 225px;
     position: fixed;
@@ -38,15 +38,14 @@ body {
     overflow: auto;
 }
 
-.card-size {
+.profile-card-size {
     max-width: 365px;
     max-height: 431px;
 }
-.content {
-    margin: 10px;
+.profile-content {
+    margin: 84px 10px 10px 10px;
     margin-left: 225px;
     padding: 1px 16px;
-    /* height: 1000px; */
     display: grid;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
@@ -237,11 +236,11 @@ body {
 
   /* On screens that are less than 727px wide, make the sidebar into a topbar */
   @media screen and (max-width: 727px) {
-    .sidebar {
+    .profile-sidebar {
         width: 100%;
         height: auto;
         position: relative;
     }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
+    .profile-sidebar a {float: left;}
+    div.profile-content {margin-left: 0;}
 }

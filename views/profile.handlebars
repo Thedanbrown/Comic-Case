@@ -23,16 +23,16 @@
         </nav>
     </header>
 
-    <div class="sidebar bg-dark">
+    <div class="profile-sidebar bg-dark">
         <ul class="nav nav-pills nav-flush flex-sm-column flex-row mb-auto mx-auto text-center align-items-center justify-content-center">
             <li class="nav-item">
             </li>
-                <h4>USERNAME</h4>
+                <h4>{{ user.email }}</h4>
             <li>
-                <p>LOCATION</p>
+                <p>{{ user.location }}</p>
             </li>
             <li>
-                <p>Since 2022</p>
+                <p>{{ user.join_date }}</p>
             </li>
         </ul>
         <div class="profile-create-box align-items-center justify-content-center">
@@ -53,9 +53,9 @@
         </div>
         
     </div>
-    <div class="content">
+    <div class="profile-content">
         {{#each comics as |comic| }}
-        <div class="card card-size">
+        <div class="profile-card profile-card-size">
             <img class="card-img-top cardImage" src={{ comic.image }} alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title text-center">{{ comic.title }}</h5>

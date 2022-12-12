@@ -1,7 +1,6 @@
 <header>
-        <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
             <a class="navbar-brand nav-title" href="#"><h1><i>Comic Case</i></h1></a>
-            <h2>Welcome to the user feed, see what people are collecting!</h2>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     
@@ -24,25 +23,25 @@
         </nav>
     </header>   
 
-    <div class="sidebar bg-dark">
-        <ul class="nav nav-pills nav-flush flex-sm-column flex-row mb-auto mx-auto text-center align-items-center">
-            <li class="nav-item">
+    <div class="feed-sidebar bg-dark">
+        <ul class="nav nav-pills nav-flush flex-sm-column flex-row mb-auto mx-auto text-center justify-content-center align-items-center">
+            <li>
+                <h4>{{ user.email }}</h4>
             </li>
-                <h4>{{ user.name }}</h4>
             <li>
                 <p>{{ user.location }}</p>
             </li>
             <li>
-                <p>{{ user.join_Date }}</p>
+                <p>{{ user.join_date }}</p>
             </li>
         </ul>
+        <p class="text-center">Welcome to the feed! see what other users are collecting</p>
         
     </div>
-
-    <div class="content">
+    <div class="feed-content">
         {{#each comics as |comic|}}
-        <div class="card card-size">
-            <p class="text-center">{{User.name}}</p>
+        <div class="feed-card feed-card-size">
+            <p class="text-center">{{ user.email }}</p>
             <img class="card-img-top cardImage" src={{ comic.image }} alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title text-center">{{ comic.title }}</h5>
@@ -52,8 +51,7 @@
                 </ul>
             </div>
         </div>
-        {{/each}}
-    </div>
+        
 
     <script  src="./public/js/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

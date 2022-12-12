@@ -1,0 +1,545 @@
+:root {
+    --green: #3f9f44;
+    --red: #e43d1d;
+    --blue: #217fbe;
+    --yelow: #f7db51;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin:0;
+    padding:0;
+    font-family: "Bangers";
+    background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+    ), url("../img/comicbooks.jpg");
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+ul li {
+    margin: 0 0 0 5px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--green);
+}
+
+.sidebar {
+    border-right: 2px solid var(--green);
+    color: var(--green);
+}
+
+.profile-sidebar {
+    border-right: 2px solid var(--green);
+    color: var(--green);
+    margin: 0px 0 0 0;
+    padding: 0;
+    width: 225px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.feed-sidebar {
+    border-right: 2px solid var(--green);
+    color: var(--green);
+    margin: 0px 0 0 0;
+    padding: 0;
+    width: 150px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.profile-content {
+    margin: 84px 10px 10px 10px;
+    margin-left: 225px;
+    padding: 1px 16px;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.feed-content {
+    margin: 84px 10px 10px 10px;
+    margin-left: 150px;
+    padding: 1px 16px;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.profile-card {
+    background: rgba(0,0,0,.7);
+    border: 2px solid var(--green);
+    box-shadow: 0 15px 25px var(--yellow);
+    color: var(--blue);
+}
+
+.feed-card {
+    background: rgba(0,0,0,.7);
+    border: 2px solid var(--green);
+    box-shadow: 0 10px 10px var(--red);
+    color: var(--blue);
+}
+
+.cardImage {
+    border-bottom: 2px solid var(--green);
+}
+
+.profile-card-size {
+    max-width: 365px;
+    max-height: 431px;
+}
+
+.feed-card-size {
+    max-width: 397px;
+    max-height: 431px;
+}
+
+.footer {
+    border-top: 2px solid var(--green);
+}
+
+.navbar-text {
+    font-size: 1.75rem;
+    color: var(--green);
+}
+
+.footer-text {
+    font-size: .75rem;
+    color: var(--green)
+}
+
+.login-box, .signUp-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 400px;
+    padding: 40px;
+    background: rgba(0,0,0,.7);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px var(--yellow);
+    border-radius: 10px;
+}
+
+.login-box h2, .signUp-box h2 {
+    font-size: 1.5rem;
+    margin: 0 0 15px;
+    padding: 0;
+    color: var(--green);
+    text-align: center;
+}
+
+.login-box .user-box, .signUp-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input, .signUp-box .user-box input {
+    width: 100%;
+    font-size: 1rem;
+    color: var(--green);
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label, .signUp-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    font-size: 1rem;
+    color: var(--green);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+    top: -10px;
+    left: 0;
+    color: var(--red);
+    font-size: .6rem;
+}
+
+.signUp-box .user-box input:focus ~ label,
+.signUp-box .user-box input:valid ~ label {
+    top: -10px;
+    left: 0;
+    color: var(--red);
+    font-size: .6rem;
+}
+
+.login-box form a, .signUp-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--blue);
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+.login-box a:hover, .signUp-box a:hover {
+    background: var(--blue);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--blue),
+                0 0 25px var(--blue),
+                0 0 50px var(--blue),
+                0 0 100px var(--blue);
+}
+
+.login-box a span, .signUp-box a span {
+    position: absolute;
+    display: block;
+} 
+
+.login-box a span:nth-child(1), .signUp-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue));
+    animation: btn-anim1 1s linear infinite;
+}
+
+.login-box a span:nth-child(2), .signUp-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--blue));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+.login-box a span:nth-child(3), .signUp-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--blue));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+.login-box a span:nth-child(4), .signUp-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--blue));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,100% {
+        left: 100%;
+    }
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,100% {
+        top: 100%;
+    }
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,100% {
+        right: 100%;
+    }
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,100% {
+        bottom: 100%;
+    }
+}
+
+.create-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    padding: 40px;
+    background: rgba(0,0,0,.7);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px var(--red);
+    border-radius: 10px;
+}
+
+.create-box h2 {
+    font-size: 1.5rem;
+    margin: 0 0 30px;
+    padding: 0;
+    color: var(--green);
+    text-align: center;
+}
+
+.create-box .user-box {
+    position: relative;
+}
+
+.create-box .user-box input {
+    width: 100%;
+    font-size: 1rem;
+    color: var(--green);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.create-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    font-size: 1rem;
+    color: var(--green);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.create-box .user-box input:focus ~ label,
+.create-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--red);
+    font-size: 1rem;
+}
+
+
+.create-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--green);
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+.create-box a:hover {
+    background: var(--green);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--green),
+                0 0 25px var(--green),
+                0 0 50px var(--green),
+                0 0 100px var(--green);
+}
+
+.create-box a span {
+    position: absolute;
+    display: block;
+} 
+
+.create-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green));
+    animation: btn-anim1 1s linear infinite;
+}
+
+.create-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--green));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+
+.create-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--green));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+
+.create-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--green));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+.profile-create-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding: 10px;
+    background: rgba(0,0,0, 0);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px var(--green);
+    border-radius: 10px;
+}
+
+.profile-create-box {
+    font-size: 1.5rem;
+    margin: auto;
+    padding: 0;
+    color: var(--green);
+    text-align: center;
+}
+
+.profile-create-box .user {
+    position: relative;
+}
+
+.profile-create-box .user-box input {
+    width: 60%;
+    font-size: 1rem;
+    color: var(--green);
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.profile-create-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    font-size: 1rem;
+    color: var(--green);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.profile-create-box .user-box input:focus ~ label,
+.profile-create-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--red);
+    font-size: 1rem;
+}
+
+.profile-create-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 10px;
+    color: var(--green);
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 10px;
+    letter-spacing: 4px
+}
+
+.profile-create-box a:hover {
+    background: var(--green);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--green),
+                0 0 25px var(--green),
+                0 0 50px var(--green),
+                0 0 100px var(--green);
+}
+
+.profile-create-box a span {
+    position: absolute;
+    display: block;
+} 
+
+.profile-create-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green));
+    animation: btn-anim1 1s linear infinite;
+}
+
+.profile-create-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--green));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+.profile-create-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--green));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+.profile-create-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--green));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+/* On screens that are less than 727px wide, make the sidebar into a topbar */
+@media screen and (max-width: 727px) {
+    .profile-sidebar, .feed-sidebar {
+        margin: 84px 0 0 0;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .profile-sidebar a, .feed-sidebar a {float: left;}
+    div.profile-content, div.feed-content {margin-left: 0;}
+}
