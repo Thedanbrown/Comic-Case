@@ -1,0 +1,60 @@
+<header>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand nav-title" href="#"><h1><i>Comic Case</i></h1></a>
+            <h2>Welcome to the user feed, see what people are collecting!</h2>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>   
+
+    <div class="sidebar bg-dark">
+        <ul class="nav nav-pills nav-flush flex-sm-column flex-row mb-auto mx-auto text-center align-items-center">
+            <li class="nav-item">
+            </li>
+                <h4>{{ user.name }}</h4>
+            <li>
+                <p>{{ user.location }}</p>
+            </li>
+            <li>
+                <p>{{ user.join_Date }}</p>
+            </li>
+        </ul>
+        
+    </div>
+
+    <div class="content">
+        {{#each comics as |comic|}}
+        <div class="card card-size">
+            <p class="text-center">{{User.name}}</p>
+            <img class="card-img-top cardImage" src={{ comic.image }} alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{ comic.title }}</h5>
+                <ul>
+                    <li class="publisher">{{ comic.publisher }}</li>
+                    <li class="publish-date">{{ comic.published_date }}</li>
+                </ul>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <script  src="./public/js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
