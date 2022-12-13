@@ -1,41 +1,51 @@
-const createComicData = function (event) {
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-  const name = document.getElementById('name').value;
-  const issuenum = document.getElementById('issuenum').value;
-  // const volume = document.getElementById('volume').value;
-  // const comicvineid = document.getElementById('comicvineid').value;
-  const pubdat = document.getElementById('coverdate').value;
-  const publisher = document.getElementById('publisher').value;
-  const condition = document.getElementById('condition').value;
-  const image = document.getElementById('imagelink').value;
-  const deck = document.getElementById('deck').value;
-  // const description = document.getElementById('description').value;
+class Comic extends Model {}
 
-// add in additional data elements
-  fetch('/api/comics', {
-      method: 'POST',
-      body: JSON.stringify({
-          title: name,
-          issue: issuenum,
-          // volume: volume,
-          // comicvine_id: comicvineid,
-          published_date: pubdat,
-          publisher: publisher,
-          condition: condition,
-          image: image,
-          deck: deck,
-          // description: description
+Comic.init(
+  {
+    comic_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      autoIncrement: true
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    issue: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    published_date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    publisher: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    condition: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    deck: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'comic',
+  }
+);
 
-      })
-  })
-  
-  .then(response => {
-      if (response.status == 200) {
-          alert('You added your comic!')
-      }
-      else {
-          alert('Error, please try again!')
-      }
-  })
-
-}
+module.exports = Project;
