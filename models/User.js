@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const bcrypt = require('bcrypt');
 const dayjs = require('dayjs');
 const sequelize = require('../config/connection');
@@ -12,10 +12,15 @@ class User extends Model {
 
 User.init(
 {
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true
+    },  
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        primaryKey: true,
         unique: true,
         validate: {
             isEmail: true,
@@ -33,6 +38,11 @@ User.init(
         allowNull: false,
 
     },
+    location: {
+        type: DataTypes.STRING,
+        allowNull: false,
+
+    },
 
     // dateofbirth: {
     //     type: DataTypes.DATEONLY,
@@ -42,17 +52,15 @@ User.init(
     acctcreatedate: {
         type: DataTypes.DATEONLY,
         allowNull: false,
-        get: function() {
-            return dayjs.utc(this.getDataValue('acctcreatedate')).format('YYYY-MM-DD');
-        }
+        defaultValue: Sequelize.fn('now')
     },
     password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [8],
+        len: [8],
         },
-      }
+    }
 
 },
 {

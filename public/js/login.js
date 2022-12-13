@@ -27,26 +27,27 @@ const signupFormHandler = async (event) => {
     const lastname = document.querySelector('#lastname-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const location = document.querySelector('#location-signup').value.trim();
 
-    if (firstname && lastname && email && password) {
+    if (firstname && lastname && email && password && location) {
         const response = await fetch ('/api/users', {
              method: 'POST',
-             body: JSON.stringify({ firstname, lastname, email, password }),
+             body: JSON.stringify({ firstname, lastname, email, password, location }),
              headers: { 'Content-Type': 'application/json'},
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/creation');
         } else {
             alert(response.statusText);
         }
     }
 };
-
+//add if already login statement
 document
-  .querySelector('.login-form')
+  .querySelector('#login-form')
   .addEventListener('submit', loginFormHandler);
 
 document
-  .querySelector('.signup-form')
+  .querySelector('#signup-form')
   .addEventListener('submit', signupFormHandler);

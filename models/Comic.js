@@ -6,9 +6,10 @@ class Comic extends Model {}
 Comic.init(
   {
     comic_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
-      autoIncrement: true
+      autoIncrement: true,
+      primaryKey: true
     },
     title: {
       type: DataTypes.STRING,
@@ -42,7 +43,7 @@ Comic.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
+        key: "user_id",
       },
     },
   },
@@ -55,4 +56,4 @@ Comic.init(
   }
 );
 
-module.exports = Project;
+module.exports = Comic;

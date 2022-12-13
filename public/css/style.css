@@ -121,7 +121,7 @@ ul li {
     color: var(--green)
 }
 
-.login-box, .signUp-box {
+#login-box, #signup-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,7 +134,7 @@ ul li {
     border-radius: 10px;
 }
 
-.login-box h2, .signUp-box h2 {
+#login-box h2, #signup-box h2 {
     font-size: 1.5rem;
     margin: 0 0 15px;
     padding: 0;
@@ -142,11 +142,11 @@ ul li {
     text-align: center;
 }
 
-.login-box .user-box, .signUp-box .user-box {
+#login-box .user-box, #signup-box .user-box {
     position: relative;
 }
 
-.login-box .user-box input, .signUp-box .user-box input {
+#login-box .user-box input, #signup-box .user-box input {
     width: 100%;
     font-size: 1rem;
     color: var(--green);
@@ -157,7 +157,7 @@ ul li {
     background: transparent;
 }
 
-.login-box .user-box label, .signUp-box .user-box label {
+#login-box .user-box label, #signup-box .user-box label {
     position: absolute;
     top:0;
     left: 0;
@@ -167,23 +167,23 @@ ul li {
     transition: .5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+#login-box .user-box input:focus ~ label,
+#login-box .user-box input:valid ~ label {
     top: -10px;
     left: 0;
     color: var(--red);
     font-size: .6rem;
 }
 
-.signUp-box .user-box input:focus ~ label,
-.signUp-box .user-box input:valid ~ label {
+#signup-box .user-box input:focus ~ label,
+#signup-box .user-box input:valid ~ label {
     top: -10px;
     left: 0;
     color: var(--red);
     font-size: .6rem;
 }
 
-.login-box form a, .signUp-box form a {
+#login-box form a, #signup-box form a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -197,7 +197,7 @@ ul li {
     letter-spacing: 4px
 }
 
-.login-box a:hover, .signUp-box a:hover {
+#login-box a:hover, #signup-box a:hover {
     background: var(--blue);
     color: #fff;
     border-radius: 5px;
@@ -207,12 +207,12 @@ ul li {
                 0 0 100px var(--blue);
 }
 
-.login-box a span, .signUp-box a span {
+#login-box a span, #signup-box a span {
     position: absolute;
     display: block;
 } 
 
-.login-box a span:nth-child(1), .signUp-box a span:nth-child(1) {
+#login-box a span:nth-child(1), #signup-box a span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -221,7 +221,7 @@ ul li {
     animation: btn-anim1 1s linear infinite;
 }
 
-.login-box a span:nth-child(2), .signUp-box a span:nth-child(2) {
+#login-box a span:nth-child(2), #signup-box a span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -231,7 +231,7 @@ ul li {
     animation-delay: .25s
 }
 
-.login-box a span:nth-child(3), .signUp-box a span:nth-child(3) {
+#login-box a span:nth-child(3), #signup-box a span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -241,7 +241,7 @@ ul li {
     animation-delay: .5s
 }
 
-.login-box a span:nth-child(4), .signUp-box a span:nth-child(4) {
+#login-box a span:nth-child(4), #signup-box a span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;

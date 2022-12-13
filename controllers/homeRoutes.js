@@ -5,24 +5,9 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // get all comics and JOIN with user data
-    const comicData = await Comic.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    // serialize data so the template can read it
-    const comics = comicData.map((comic) => comic.get({ plain: true }));
-
-    // pass serialized data and session flag into template
-    res.render('homepage', { 
-      comics, 
+    res.render('landing', {
       logged_in: req.session.logged_in 
-    });
+    })
   } catch (err) {
     res.status(500).json(err);
   }
@@ -51,6 +36,15 @@ router.get('/comic/:id', async (req, res) => {
   }
 });
 
+router.get('/creation', withAuth, async (req, res) => {
+  try{
+    res.render('creation', {
+    logged_in: req.session.logged_in
+  });
+} catch (err) {
+  res.status(500).json(err);
+}
+})
 
 // withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -68,6 +62,7 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
