@@ -5,24 +5,39 @@ class Comic extends Model {}
 
 Comic.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
+    comic_id: {
+      type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
-    date_created: {
-      type: DataTypes.DATE,
+    title: {
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
-    //
-
-
-    //need to finish code
-
-
-    //
+    issue: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    published_date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    publisher: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    condition: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    deck: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -40,4 +55,4 @@ Comic.init(
   }
 );
 
-module.exports = Comic;
+module.exports = Project;
