@@ -2,7 +2,7 @@ const router = require('express').Router();
 const fetch = require('node-fetch');
 const { title } = require('process');
 
-const API_KEY = 'e94ef6cf167986239c7e6513b1ae2294e3bcdf22'
+const API_KEY = process.env.Api_key;
 
 router.get('/', (req, res) => {
     const {name, issue} = req.query;
