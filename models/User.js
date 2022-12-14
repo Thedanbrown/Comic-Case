@@ -50,9 +50,9 @@ User.init(
     // },
 
     acctcreatedate: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: Sequelize.fn('now')
+        defaultValue: DataTypes.NOW
     },
     password: {
         type: DataTypes.STRING,
@@ -68,11 +68,11 @@ User.init(
         beforeCreate: async (newUserData) => {
             newUserData.password = await bcrypt.hash(newUserData.password, 10);
             return newUserData;
-          },
-          beforeUpdate: async (updatedUserData) => {
+        },
+        beforeUpdate: async (updatedUserData) => {
             updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
             return updatedUserData;
-          },
+        },
     },
     sequelize,
     timestamps: false,

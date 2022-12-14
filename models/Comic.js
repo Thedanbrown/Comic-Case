@@ -19,23 +19,23 @@ Comic.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    published_date: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    publisher: {
+    cover_date: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     condition: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     image: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    deck: {
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    volume: {
       type: DataTypes.STRING,
       allowNull: false,
     },

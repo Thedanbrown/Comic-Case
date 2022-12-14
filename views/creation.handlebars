@@ -7,16 +7,13 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="/profile">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="/feed">Feed</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Feed</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" id="logout" href="/">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -31,12 +28,12 @@
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row mb-auto mx-auto text-center align-items-center">
                         <li class="nav-item">
                         </li>
-                            <h4>{{ user.email }}</h4>
+                            <h4>{{firstname}}</h4>
                         <li>
-                            <p>{{ user.location }}</p>
+                            <p>{{location}}</p>
                         </li>
                         <li>
-                            <p>{{ user.join_date }}</p>
+                            <p>{{acctcreatedate}}</p>
                         </li>
                     </ul>
                 </div>
@@ -53,7 +50,7 @@
                                 <input  id="issuesearch" type="text" name="q" placeholder="">
                                 <label>issue number</label>
                             </div>
-                            <button id="search-submit">
+                            <button href="/profile" id="search-submit">
                             <span></span>
                             <span></span>
                             <span></span>

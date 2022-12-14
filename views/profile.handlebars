@@ -7,16 +7,10 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="/feed" id="nav-feed">Feed</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Feed</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="/" id="logout">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -27,28 +21,30 @@
         <ul class="nav nav-pills nav-flush flex-sm-column flex-row mb-auto mx-auto text-center align-items-center justify-content-center">
             <li class="nav-item">
             </li>
-                <h4>{{ user.email }}</h4>
+                <h4>Welcome!</h4>
+                <h5>{{firstname}}</h5>
             <li>
-                <p>{{ user.location }}</p>
+                <p>{{location}}</p>
             </li>
             <li>
-                <p>{{ user.join_date }}</p>
+                <p>member since:</p>
+                <p>{{acctcreatedate}}</p>
             </li>
         </ul>
         <div class="profile-create-box align-items-center justify-content-center">
-            <form>
+            <form id="search-form">
             <h2>Add new case</h2>
                 <div class="user-box ">
-                    <input  id="create-case" type="text" name="q" placeholder="comic Name">
-                    <input  id="create-case" type="text" name="q" placeholder="issue number">
+                    <input  id="namesearch" type="text" name="q" placeholder="comic Name">
+                    <input  id="issuesearch" type="text" name="q" placeholder="issue number">
                 </div>
-                <a href="#" id="search-submit">
+                <button href="#" id="search-submit">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 create
-                </a>
+                </button>
             </form>
         </div>
         
@@ -56,11 +52,11 @@
     <div class="profile-content">
         {{#each comics as |comic| }}
         <div class="profile-card profile-card-size">
-            <img class="card-img-top cardImage" src={{ comic.image }} alt="Card image cap">
+            <img class="card-img-top cardImage" src={{comic.image}} alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title text-center">{{ comic.title }}</h5>
+                <h5 class="card-title text-center">{{comic.title}}</h5>
                 <ul>
-                    <li class="publisher">{{ comic.publisher }}</li>
+                    <li class="volume">{{comic.volume}}</li>
                     <li class="publish-date">{{ comic.published_date}}</li>
                 </ul>
             </div>
@@ -68,4 +64,5 @@
         {{/each}}
     </div>
     
+    <script src="/js/search.js"></script>
     

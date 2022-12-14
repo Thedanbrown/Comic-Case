@@ -7,16 +7,10 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" id="nav-profile" href="/profile">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Feed</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" id="logout" href="/">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -26,13 +20,13 @@
     <div class="feed-sidebar bg-dark">
         <ul class="nav nav-pills nav-flush flex-sm-column flex-row mb-auto mx-auto text-center justify-content-center align-items-center">
             <li>
-                <h4>{{ user.email }}</h4>
+                <h4>{{firstname}}</h4>
             </li>
             <li>
-                <p>{{ user.location }}</p>
+                <p>{{location}}</p>
             </li>
             <li>
-                <p>{{ user.join_date }}</p>
+                <p>{{acctcreatedate}}</p>
             </li>
         </ul>
         <p class="text-center">Welcome to the feed! see what other users are collecting</p>
@@ -41,13 +35,13 @@
     <div class="feed-content">
         {{#each comics as |comic|}}
         <div class="feed-card feed-card-size">
-            <p class="text-center">{{ user.email }}</p>
-            <img class="card-img-top cardImage" src={{ comic.image }} alt="Card image cap">
+            <p class="text-center">{{user.email}}</p>
+            <img class="card-img-top cardImage" src={{comic.image}} alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title text-center">{{ comic.title }}</h5>
+                <h5 class="card-title text-center">{{comic.title}}</h5>
                 <ul>
-                    <li class="publisher">{{ comic.publisher }}</li>
-                    <li class="publish-date">{{ comic.published_date }}</li>
+                    <li class="volume">{{comic.volume}}</li>
+                    <li class="publish-date">{{comic.published_date}}</li>
                 </ul>
             </div>
         </div>
