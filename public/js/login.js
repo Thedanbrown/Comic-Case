@@ -31,9 +31,9 @@ const signupFormHandler = async (event) => {
 
     if (firstname && lastname && email && password && location) {
         const response = await fetch ('/api/users', {
-             method: 'POST',
-             body: JSON.stringify({ firstname, lastname, email, password, location }),
-             headers: { 'Content-Type': 'application/json'},
+            method: 'POST',
+            body: JSON.stringify({ firstname, lastname, email, password, location }),
+            headers: { 'Content-Type': 'application/json'},
         });
 
         if (response.ok) {
@@ -44,10 +44,6 @@ const signupFormHandler = async (event) => {
     }
 };
 //add if already login statement
-document
-  .querySelector('#login-form')
-  .addEventListener('submit', loginFormHandler);
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
 
-document
-  .querySelector('#signup-form')
-  .addEventListener('submit', signupFormHandler);
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);

@@ -10,7 +10,7 @@
                         <a class="nav-link" href="/feed" id="nav-feed">Feed</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/" id="logout">Logout</a>
+                        <button id="logout">Logout</button>
                     </li>
                 </ul>
             </div>
@@ -38,31 +38,32 @@
                     <input  id="namesearch" type="text" name="q" placeholder="comic Name">
                     <input  id="issuesearch" type="text" name="q" placeholder="issue number">
                 </div>
-                <button href="#" id="search-submit">
+                <a href="#" id="search-submit">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                create
-                </button>
+                <input type="submit">
+                </a>
             </form>
         </div>
         
     </div>
     <div class="profile-content">
-        {{#each comics as |comic| }}
+        {{#each comics as |comic|}}
         <div class="profile-card profile-card-size">
             <img class="card-img-top cardImage" src={{comic.image}} alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title text-center">{{comic.title}}</h5>
                 <ul>
                     <li class="volume">{{comic.volume}}</li>
-                    <li class="publish-date">{{ comic.published_date}}</li>
+                    <li class="publish-date">{{comic.published_date}}</li>
                 </ul>
             </div>
         </div>
         {{/each}}
     </div>
     
+    <script src="/js/logout.js"></script>
     <script src="/js/search.js"></script>
     
