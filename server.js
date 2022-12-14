@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const jshint = require('jshint');
 const bodyParser = require('body-parser')
+const helpers = require('./utils/helpers');
 
 
 const sequelize = require('./config/connection');

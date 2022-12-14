@@ -9,12 +9,26 @@ const triggerSearch = function (event) {
     console.log(issue)
     
 
-    fetch('/api/search?' + new URLSearchParams ({name, issue})) 
+    fetch('/api/search?' + new URLSearchParams ({name, issue}))
     .catch((err) => {
         console.log(err)})
-
 }
 
+const comicCreation = async (event) => {
+    const title = data.results.title;
+    const issue = data.results.issue;
+    const cover_date = data.results.cover_date;
+    const image = data.results.image.medium_url;
+    const description = data.results.description;
+    const volume = data.results.deck.name
+
+    if (title && issue && cover_date && image && deck && volume) {
+        const response = fetch ('/api/comics', {
+                method: 'POST',
+                body: JSON.stringify({ title, issue, cover_date, image, deck, location }),
+                headers: { 'Content-Type': 'application/json'},
+        });
+}}
 // assumption that separate JS handling the creation of new elements on page - Dan
 
 
