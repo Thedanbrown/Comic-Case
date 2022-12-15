@@ -8,7 +8,7 @@
 html {
     height: 100%;
 }
-
+/* background set as a gradiented image */
 body {
     margin:0;
     padding:0;
@@ -36,7 +36,7 @@ ul li {
     border-right: 2px solid var(--green);
     color: var(--green);
 }
-
+/* sets the sidebar to takeup full vh on the left side */
 .profile-sidebar {
     border-right: 2px solid var(--green);
     color: var(--green);
@@ -58,7 +58,7 @@ ul li {
     height: 100%;
     overflow: auto;
 }
-
+/* sets the comic "cases" into a grid for responsiveness and starts their margin over to not set behind fixed sidebar */
 .profile-content {
     margin: 84px 10px 10px 10px;
     margin-left: 225px;
@@ -81,18 +81,10 @@ ul li {
 
 .profile-card {
     background: rgba(0,0,0,.7);
-    /* position: relative;
-    background-size: cover; */
     border: 2px solid var(--green);
     box-shadow: 0 15px 25px var(--yellow);
     color: var(--blue);
 }
-
-/* .card-body {
-    
-    position: absolute;
-    bottom: 0;
-} */
 
 .feed-card {
     background: rgba(0,0,0,.7);
@@ -100,7 +92,7 @@ ul li {
     box-shadow: 0 10px 10px var(--red);
     color: var(--blue);
 }
-
+/* sets the card images to a certain size on each tile and contain fits them in the space */
 .cardImage {
     border-bottom: 2px solid var(--green);
     max-width: 321px;
@@ -108,7 +100,7 @@ ul li {
     object-fit: contain;
 
 }
-
+/* sets max size for grid layout and responsiveness */
 .profile-card-size {
     max-width: 365px;
     max-height: 431px;
@@ -133,7 +125,7 @@ ul li {
     font-size: .75rem;
     color: var(--green)
 }
-
+/* styling for the sign up boxes. animations ect */
 #login-box, #signup-box {
     display: flex;
     justify-content: center;
@@ -224,7 +216,7 @@ ul li {
     position: absolute;
     display: block;
 } 
-
+/* these control all the animations for the submit buttons */
 #login-box a span:nth-child(1), #signup-box a span:nth-child(1) {
     top: 0;
     left: -100%;

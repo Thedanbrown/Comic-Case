@@ -16,7 +16,7 @@
             </div>
         </nav>
     </header>   
-
+{{!-- dynamically generated data with handlebars. shows current users name/location and the date their account was created --}}
     <div class="feed-sidebar bg-dark">
         <ul class="nav nav-pills nav-flush flex-sm-column flex-row mb-auto mx-auto text-center justify-content-center align-items-center">
             <li>
@@ -32,6 +32,7 @@
         <p class="text-center">Welcome to the feed! see what other users are collecting</p>
         
     </div>
+    {{!-- handlebars each statement displays the most current comics from all users --}}
     <div class="feed-content">
         {{#each comics as |comic|}}
         <div class="feed-card feed-card-size">
