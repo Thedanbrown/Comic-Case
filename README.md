@@ -14,7 +14,7 @@ This is a group project that was completed by Daniel Brown, Tyler Kandarian and 
 1. Use of Node.js and Express.js to create a RESTful API
 2. Use of Handlebars.js as the template engine
 3. Use of MySQL and the Sequelize ORM for the database
-4. Use of bot GET and POST routes for retrieving and adding new data
+4. Use of both GET and POST routes for retrieving and adding new data
 5. Use of at least one new library, package or technology that was not covered during the Georgia Tech bootcamp class
 6. A folder structure that meets the MVC paradigm
 7. Authentication (express-session and cookies)
@@ -22,7 +22,7 @@ This is a group project that was completed by Daniel Brown, Tyler Kandarian and 
 9. A deployed application using Heroku (with data)
 10. A polished, responsive UI
 11. An application that accepts and responds to user input
-12. Meets good-qualitt coding standards
+12. Meets good-quality coding standards
 13. This professional README :) 
 
 ## User Stories
@@ -50,16 +50,9 @@ I WANT to be able to add additional comics after adding my first comic or check 
 SO THAT I can upload my complete collection OR go to view others collections after I sign up
 
 AS A Comic Collector
-I WANT to be able to view and comment on other collectors collections
+I WANT to be able to view  other collectors collections
 SO THAT I interact with my community
 
-AS A Comic Collector
-I WANT to be able to place my comics up for auction
-SO THAT I can sell some of my collection
-
-AS A Comic Collector
-I WANT to be able to bid on comics that have been placed up for auction
-SO THAT I can add new comics to my collection
 ```
 
 ## Acceptance Criteria
@@ -92,15 +85,6 @@ THEN the comic api fetches all the data in the comic model to display it on the 
 WHEN a user navigates across all page
 THEN handlebars manage dynamic changes across pages
 
-WHEN a user notes that a comic is up for auction
-THEN another user can bid on the comic up for auction
-
-WHEN a user notes a comic is up for auction or the comic is bid on
-THEN the comic marketplace model's data is updated
-
-WHEN a user comments on a comic on the feed
-THEN the comic comments model is updated
-
 WHEN developing application
 THEN developers use JSHint to ensure high JavaScript quality when developing (https://www.npmjs.com/package/jshint)
 
@@ -118,7 +102,7 @@ JSHint: This static code tool checks code quality through linting. Linting is a 
 Key packages:
 1. Bcrypt
 2. Connect-Session-Sequlize
-3. .NEV
+3. .ENV
 4. JSHint
 5. Express
 6. Express Handlebars
@@ -127,6 +111,7 @@ Key packages:
 9. Path
 10. Router
 11. Sequelize
+12. Body-parser
 
 ## Deployed Application
 ***
