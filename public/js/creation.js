@@ -1,6 +1,4 @@
-// Comic search function with connection to searchRoutes to best handle CORS error
-
-const triggerSearch = function (event) {
+const firstCreation = function (event) {
     event.preventDefault();
     const nameSearch = document.getElementById('namesearch');
     const issueSearch = document.getElementById('issuesearch');
@@ -22,12 +20,12 @@ const triggerSearch = function (event) {
         return response.json();
     })
     .then ((response) => {
-        comicCreation(response);
+        firstComic(response);
+        document.location.replace('/profile');
     })
 }
 
-const comicCreation = function (comic) {
-    // comic.condition = "unknown";
+const firstComic = function (comic) {
     comic.description = "";
     fetch ('/api/comics', {
         method: 'POST',
@@ -36,12 +34,10 @@ const comicCreation = function (comic) {
     })
     .then((response) => {
         console.log(response);
-        document.location.reload();
     })
     .catch((err) => {
         console.log(err)
     })
 }
 
-
-document.querySelector('#search-form').addEventListener('submit', triggerSearch);
+document.querySelector('#creation-form').addEventListener('submit', firstCreation);

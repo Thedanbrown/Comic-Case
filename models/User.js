@@ -45,6 +45,7 @@ User.init(
         allowNull: false,
 
     },
+
     acctcreatedate: {
         type: DataTypes.DATEONLY,
         allowNull: false,
