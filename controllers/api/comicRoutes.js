@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Comic } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+//route handler to create new comic. this uses the withAuth middleware to uthenticate the request and ensure that it is coming from an authenticated user.
 router.post('/', withAuth, async (req, res) => {
   try {
     console.log(req.body)
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// route handler to delete a comic. this uses the withAuth middleware to uthenticate the request and ensure it comes from an authenticated user.
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const ComicData = await Comic.destroy({
