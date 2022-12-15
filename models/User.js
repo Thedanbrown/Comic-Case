@@ -44,11 +44,6 @@ User.init(
 
     },
 
-    // dateofbirth: {
-    //     type: DataTypes.DATEONLY,
-    //     allowNull: false,
-    // },
-
     acctcreatedate: {
         type: DataTypes.DATEONLY,
         allowNull: false,
