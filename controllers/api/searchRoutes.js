@@ -24,7 +24,6 @@ console.log(req.query)
             condition  
         };
         res.json(response);
-        // res.sendStatus(200)
     })
     .catch((err) => {
         console.log(err)

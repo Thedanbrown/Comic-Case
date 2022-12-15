@@ -1,7 +1,7 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 const { Comic, User } = require('../models');
 const withAuth = require('../utils/auth');
-
 
 router.get('/', async (req, res) => {
   try {
@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 router.get('/comic/:id', async (req, res) => {
   try {

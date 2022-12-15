@@ -7,9 +7,8 @@ router.post('/', withAuth, async (req, res) => {
     console.log(req.body)
     const newComic = await Comic.create({
       ...req.body,
-      user_id: req.session.user_id, // Janaee worked with Tutor to review, changed to user_id so that the user id is passed with the comic in session to save to DB
+      user_id: req.session.user_id,
     });
-
     res.status(200).json(newComic);
   } catch (err) {
     res.status(400).json(err);
