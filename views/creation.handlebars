@@ -13,7 +13,7 @@
                         <a class="nav-link" href="/feed">Feed</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="logout" href="/">Logout</a>
+                        <a class="nav-link" type="button" id="logout">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -42,7 +42,7 @@
                 <div class="create-box w-50 mx-auto col-sm-4 col-md-6 col-lg-8 m-3">
                     <form id="search-form">
                         <h2>Let's create your first case! </h2>
-                            <div class="user-box ">
+                            <div class="user-box">
                                 <input  id="namesearch" type="text" name="q" placeholder="">
                                 <label>Comic Name</label>
                             </div>
@@ -50,17 +50,30 @@
                                 <input  id="issuesearch" type="text" name="q" placeholder="">
                                 <label>issue number</label>
                             </div>
-                            <button href="/profile" id="search-submit">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Create!
-                            </button>
+                            <div>
+                                <select name="languages" id="condition">
+                                    <option value="select">Condition?</option>
+                                    <option value="Near Mint">Near Mint</option>
+                                    <option value="Very Fine">Very Fine</option>
+                                    <option value="Fine">Fine</option>
+                                    <option value="Very Good">Very Good</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Fair">Fair</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
+                            </div>
+                            <a href="/profile" id="search-submit">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <input type="submit">
+                            </a>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
+    
+<script src="/js/logout.js"></script>
 <script src="/js/search.js"></script>

@@ -81,10 +81,18 @@ ul li {
 
 .profile-card {
     background: rgba(0,0,0,.7);
+    /* position: relative;
+    background-size: cover; */
     border: 2px solid var(--green);
     box-shadow: 0 15px 25px var(--yellow);
     color: var(--blue);
 }
+
+/* .card-body {
+    
+    position: absolute;
+    bottom: 0;
+} */
 
 .feed-card {
     background: rgba(0,0,0,.7);
@@ -95,11 +103,16 @@ ul li {
 
 .cardImage {
     border-bottom: 2px solid var(--green);
+    max-width: 321px;
+    max-height: 202.64px;
+    object-fit: contain;
+
 }
 
 .profile-card-size {
     max-width: 365px;
     max-height: 431px;
+    height: 431px;
 }
 
 .feed-card-size {

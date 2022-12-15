@@ -12,23 +12,31 @@ const triggerSearch = function (event) {
     fetch('/api/search?' + new URLSearchParams ({name, issue}))
     .catch((err) => {
         console.log(err)})
+    .then ((response) => {
+        console.log(response)
+        return response.json();
+    })
+    .then ((response) => {
+        comicCreation(response);
+    })
 }
 
-const comicCreation = async (event) => {
-    const title = data.results.title;
-    const issue = data.results.issue;
-    const cover_date = data.results.cover_date;
-    const image = data.results.image.medium_url;
-    const description = data.results.description;
-    const volume = data.results.deck.name
-
-    if (title && issue && cover_date && image && deck && volume) {
-        const response = fetch ('/api/comics', {
-                method: 'POST',
-                body: JSON.stringify({ title, issue, cover_date, image, deck, location }),
-                headers: { 'Content-Type': 'application/json'},
-        });
-}}
+const comicCreation = function (comic) {
+    comic.condition = "unknown";
+    comic.description = "";
+    fetch ('/api/comics', {
+        method: 'POST',
+        body: JSON.stringify(comic),
+        headers: { 'Content-Type': 'application/json'},
+    })
+    .then((response) => {
+        console.log(response);
+        document.location.reload();
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
 // assumption that separate JS handling the creation of new elements on page - Dan
 
 
