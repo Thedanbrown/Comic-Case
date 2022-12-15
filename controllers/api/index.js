@@ -1,3 +1,5 @@
+// All api routes
+
 const router = require('express').Router();
 const comicRoutes = require('./comicRoutes');
 const userRoutes = require('./userRoutes');

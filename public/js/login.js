@@ -1,3 +1,5 @@
+// User login handling
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -20,6 +22,8 @@ const loginFormHandler = async (event) => {
     }
 };
 
+
+// New user creation handling
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
@@ -43,7 +47,6 @@ const signupFormHandler = async (event) => {
         }
     }
 };
-//add if already login statement
-document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
 
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);

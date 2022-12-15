@@ -1,3 +1,5 @@
+// Comic search function with connection to searchRoutes to best handle CORS error
+
 const triggerSearch = function (event) {
     event.preventDefault();
     const nameSearch = document.getElementById('namesearch');
