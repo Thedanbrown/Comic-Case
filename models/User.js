@@ -4,6 +4,8 @@ const dayjs = require('dayjs');
 const sequelize = require('../config/connection');
 
 
+
+//User model
 class User extends Model {
     checkPassword(loginPassword) {
         return bcrypt.compareSync(loginPassword, this.password);

@@ -1,3 +1,5 @@
+// Comic Vine API to source comic data and to power search
+
 const router = require('express').Router();
 const fetch = require('node-fetch');
 const { title } = require('process');
