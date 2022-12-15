@@ -4,7 +4,7 @@ const router = require('express').Router();
 const fetch = require('node-fetch');
 const { title } = require('process');
 
-const API_KEY = process.env.Api_key;
+const API_KEY = process.env.Api_Key;
 
 router.get('/', (req, res) => {
     const {name, issue, condition} = req.query;
@@ -14,17 +14,20 @@ console.log(req.query)
         return data.json();
     })
     .then(data => {
+        let response = {};
+        if (data.results.length > 0) {
         console.log(data);
         console.log(data.results)
-        const response = {
+        response = {
             title: data.results[0].name,
             issue: data.results[0].issue_number,
             cover_date: data.results[0].cover_date,
             image: data.results[0].image.small_url,
             description: data.results[0].description,
             volume: data.results[0].volume.name,
-            condition  
+            condition
         };
+    }
         res.json(response);
     })
     .catch((err) => {
