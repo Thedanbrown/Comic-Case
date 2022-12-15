@@ -73,12 +73,16 @@ router.get('/feed', withAuth, async (req, res) => {
     // find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Comic }],
     });
 
     const user = userData.get({ plain: true });
+    const comicData = await Comic.findAll();
+    const comics = comicData.map( (c) => {
+      return c.get({ plain: true });
+    });
 
     res.render('feed', {
+      comics,
       ...user,
       logged_in: true
     });

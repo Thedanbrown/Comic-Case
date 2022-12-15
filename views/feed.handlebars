@@ -35,14 +35,15 @@
     <div class="feed-content">
         {{#each comics as |comic|}}
         <div class="feed-card feed-card-size">
-            <p class="text-center">{{user.email}}</p>
             <img class="card-img-top cardImage" src={{comic.image}} alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title text-center">{{comic.title}}</h5>
+                <h5 class="card-title text-center">Title: {{comic.title}}</h5>
                 <ul>
-                    <li class="volume">{{comic.volume}}</li>
-                    <li class="publish-date">{{comic.published_date}}</li>
+                    <li class="volume">Volume: {{comic.volume}}</li>
+                    <li class="publish-date">Published Date: {{comic.cover_date}}</li>
+                    <li class="condition">Condition: {{comic.condition}}</li>
                 </ul>
+                <p class="text-center">{{user.firstname}}</p>
             </div>
         </div>
         {{/each}}

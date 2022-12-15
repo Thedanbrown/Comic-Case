@@ -39,8 +39,8 @@
                     <input  id="issuesearch" type="text" name="q" placeholder="issue number">
                 </div>
                 <div>
-                    <select name="languages" id="condition">
-                        <option value="select">Condition?</option>
+                    <select name="grades" id="condition">
+                        <option value="Unknown">Condition?</option>
                         <option value="Near Mint">Near Mint</option>
                         <option value="Very Fine">Very Fine</option>
                         <option value="Fine">Fine</option>
@@ -50,7 +50,7 @@
                         <option value="Poor">Poor</option>
                     </select>
                 </div>
-                <a href="#" id="search-submit">
+                <a href="/profile" id="search-submit">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -65,10 +65,11 @@
         <div class="profile-card profile-card-size">
             <img class="card-img-top cardImage" src={{comic.image}} alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title text-center">{{comic.title}}</h5>
+                <h5 class="card-title text-center">Title: {{comic.title}}</h5>
                 <ul>
-                    <li class="volume">{{comic.volume}}</li>
-                    <li class="publish-date">{{comic.published_date}}</li>
+                    <li class="volume">Volume: {{comic.volume}}</li>
+                    <li class="publish-date">Published Date:{{comic.cover_date}}</li>
+                    <li class="publish-date">Condition: {{comic.condition}}</li>
                 </ul>
             </div>
         </div>

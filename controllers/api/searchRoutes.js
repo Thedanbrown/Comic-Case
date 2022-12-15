@@ -21,6 +21,7 @@ console.log(req.query)
             image: data.results[0].image.small_url,
             description: data.results[0].description,
             volume: data.results[0].volume.name,
+            condition  
         };
         res.json(response);
         // res.sendStatus(200)
