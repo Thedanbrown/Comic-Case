@@ -48,18 +48,6 @@ SO THAT I have at least one comic in my collection after signing up
 AS A Comic Collector
 I WANT to be able to add additional comics after adding my first comic or check out the Comic Case feed
 SO THAT I can upload my complete collection OR go to view others collections after I sign up
-
-AS A Comic Collector
-I WANT to be able to view and comment on other collectors collections
-SO THAT I interact with my community
-
-AS A Comic Collector
-I WANT to be able to place my comics up for auction
-SO THAT I can sell some of my collection
-
-AS A Comic Collector
-I WANT to be able to bid on comics that have been placed up for auction
-SO THAT I can add new comics to my collection
 ```
 
 ## Acceptance Criteria
@@ -92,15 +80,6 @@ THEN the comic api fetches all the data in the comic model to display it on the 
 WHEN a user navigates across all page
 THEN handlebars manage dynamic changes across pages
 
-WHEN a user notes that a comic is up for auction
-THEN another user can bid on the comic up for auction
-
-WHEN a user notes a comic is up for auction or the comic is bid on
-THEN the comic marketplace model's data is updated
-
-WHEN a user comments on a comic on the feed
-THEN the comic comments model is updated
-
 WHEN developing application
 THEN developers use JSHint to ensure high JavaScript quality when developing (https://www.npmjs.com/package/jshint)
 
@@ -127,7 +106,9 @@ Key packages:
 9. Path
 10. Router
 11. Sequelize
+12. Body Parser
 
 ## Deployed Application
 ***
+https://comic-case.herokuapp.com/
 ###### [Back to Table of Contents](#Table-of-Contents)
