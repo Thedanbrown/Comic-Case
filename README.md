@@ -115,4 +115,5 @@ Key packages:
 
 ## Deployed Application
 ***
+https://comic-case.herokuapp.com/
 ###### [Back to Table of Contents](#Table-of-Contents)
