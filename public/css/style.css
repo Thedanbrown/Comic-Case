@@ -95,14 +95,14 @@ ul li {
 /* sets the card images to a certain size on each tile and contain fits them in the space */
 .cardImage {
     border-bottom: 2px solid var(--green);
-    max-width: 321px;
+    max-width: 260.41px;
     max-height: 202.64px;
     object-fit: contain;
 
 }
 /* sets max size for grid layout and responsiveness */
 .profile-card-size {
-    max-width: 365px;
+    max-width: 260.41px;
     max-height: 431px;
     height: 431px;
 }

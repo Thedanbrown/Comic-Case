@@ -14,7 +14,7 @@ This is a group project that was completed by Daniel Brown, Tyler Kandarian and 
 1. Use of Node.js and Express.js to create a RESTful API
 2. Use of Handlebars.js as the template engine
 3. Use of MySQL and the Sequelize ORM for the database
-4. Use of both GET and POST routes for retrieving and adding new data
+4. Use of bot GET and POST routes for retrieving and adding new data
 5. Use of at least one new library, package or technology that was not covered during the Georgia Tech bootcamp class
 6. A folder structure that meets the MVC paradigm
 7. Authentication (express-session and cookies)
@@ -22,7 +22,7 @@ This is a group project that was completed by Daniel Brown, Tyler Kandarian and 
 9. A deployed application using Heroku (with data)
 10. A polished, responsive UI
 11. An application that accepts and responds to user input
-12. Meets good-quality coding standards
+12. Meets good-qualitt coding standards
 13. This professional README :) 
 
 ## User Stories
@@ -48,11 +48,6 @@ SO THAT I have at least one comic in my collection after signing up
 AS A Comic Collector
 I WANT to be able to add additional comics after adding my first comic or check out the Comic Case feed
 SO THAT I can upload my complete collection OR go to view others collections after I sign up
-
-AS A Comic Collector
-I WANT to be able to view  other collectors collections
-SO THAT I interact with my community
-
 ```
 
 ## Acceptance Criteria
@@ -94,6 +89,8 @@ JSHint: This static code tool checks code quality through linting. Linting is a 
 
 ## Screenshots
 ***
+![landing](/public/img/comic-case-landing.png)
+![feed](/public/img/comic-case-feed.png)
 ###### [Back to Table of Contents](#Table-of-Contents)
 
 ## Installation
@@ -102,7 +99,7 @@ JSHint: This static code tool checks code quality through linting. Linting is a 
 Key packages:
 1. Bcrypt
 2. Connect-Session-Sequlize
-3. .ENV
+3. .NEV
 4. JSHint
 5. Express
 6. Express Handlebars
@@ -111,7 +108,7 @@ Key packages:
 9. Path
 10. Router
 11. Sequelize
-12. Body-parser
+12. Body Parser
 
 ## Deployed Application
 ***
